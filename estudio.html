@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudia mejor · Guía Universitaria</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script>if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html"><img class="brand-logo" src="img/uach-horizontal.svg" alt="Logo de la UACH"> Universitaria <span>/ Odontología UACH</span></a>
+      <ul class="menu"><li><a href="index.html">Inicio</a></li><li><a class="active" href="estudio.html">Estudio</a></li><li><a href="bienestar.html">Bienestar</a></li><li><a href="tiempo.html">Tiempo</a></li><li><a href="recursos.html">Recursos</a></li></ul>
+    </div>
+  </header>
+
+  <section class="hero small">
+    <h1>Estudia mejor, no más horas</h1>
+    <p>Tres técnicas que mejoran lo que retienes en menos tiempo. Elige una y pruébala.</p>
+  </section>
+
+  <main class="container">
+
+    <div class="tabs" role="tablist" aria-label="Técnicas de estudio">
+      <button class="tab" role="tab" aria-selected="true" data-panel="pomodoro">Pomodoro</button>
+      <button class="tab" role="tab" aria-selected="false" data-panel="repaso">Repaso espaciado</button>
+      <button class="tab" role="tab" aria-selected="false" data-panel="mapas">Mapas mentales</button>
+    </div>
+
+    <!-- POMODORO -->
+    <section class="panel show" id="pomodoro" role="tabpanel">
+      <div class="art green">
+        <svg viewBox="0 0 360 200" role="img" aria-label="Reloj dividido en 25 minutos de enfoque y 5 de descanso">
+          <g transform="translate(180 100)">
+            <circle r="78" fill="#fff"/>
+            <circle r="62" fill="none" stroke="#f0634a" stroke-width="22" stroke-dasharray="324 66" transform="rotate(-90)"/>
+            <circle r="62" fill="none" stroke="#6bbf59" stroke-width="22" stroke-dasharray="65 325" stroke-dashoffset="-324" transform="rotate(-90)"/>
+            <circle r="78" fill="none" stroke="#111" stroke-width="5"/>
+            <g class="hand-p"><path d="M0 0 L0 -70" stroke="#111" stroke-width="5" stroke-linecap="round"/></g>
+            <circle r="8" fill="#111"/>
+          </g>
+          <rect x="20" y="40" width="12" height="12" rx="3" fill="#f0634a"/>
+          <text x="40" y="51" font-size="15" font-weight="700" fill="#111">25 min</text>
+          <text x="40" y="69" font-size="12" fill="#555">enfoque</text>
+          <rect x="244" y="138" width="12" height="12" rx="3" fill="#6bbf59"/>
+          <text x="262" y="149" font-size="15" font-weight="700" fill="#111">5 min</text>
+          <text x="262" y="167" font-size="12" fill="#555">descanso</text>
+        </svg>
+      </div>
+      <div class="body">
+        <h2>Pomodoro</h2>
+        <p class="lead" style="margin-bottom:0">Trabajas en bloques cortos con un solo objetivo y descansas entre cada uno.</p>
+        <ul>
+          <li><strong>25 minutos</strong> de enfoque total en una sola tarea.</li>
+          <li><strong>5 minutos</strong> de descanso: levántate, toma agua, estírate.</li>
+          <li>Cada <strong>4 ciclos</strong>, un descanso largo de 15 a 30 minutos.</li>
+        </ul>
+        <div class="timer">
+          <div class="mode" id="mode">Enfoque</div>
+          <div class="time" id="time">25:00</div>
+          <div class="controls">
+            <button class="btn" id="start" type="button">Iniciar</button>
+            <button class="btn ghost" id="reset" type="button">Reiniciar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REPASO ESPACIADO -->
+    <section class="panel" id="repaso" role="tabpanel">
+      <div class="art lilac">
+        <svg viewBox="0 0 360 200" role="img" aria-label="Curva del olvido con repasos que la reducen">
+          <path d="M25 15 L25 150 L345 150" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+          <path class="draw" pathLength="1" d="M30 35 Q55 115 90 122 L90 35 Q130 92 160 100 L160 35 Q205 78 240 82 L240 35 Q290 60 335 64" fill="none" stroke="#5b2a86" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <g fill="#f0634a" stroke="#111" stroke-width="3"><circle cx="90" cy="35" r="7"/><circle cx="160" cy="35" r="7"/><circle cx="240" cy="35" r="7"/></g>
+          <g font-size="12" font-weight="600" fill="#111" text-anchor="middle"><text x="30" y="170">Hoy</text><text x="90" y="170">Día 1</text><text x="160" y="170">Día 3</text><text x="240" y="170">Día 7</text></g>
+          <text x="32" y="12" font-size="11" fill="#555">Lo que recuerdas</text>
+        </svg>
+      </div>
+      <div class="body">
+        <h2>Repaso espaciado</h2>
+        <p class="lead" style="margin-bottom:0">Olvidamos rápido lo que vemos una sola vez. Repasar justo antes de olvidar hace que cada vez dure más.</p>
+        <ul>
+          <li><strong>Hoy:</strong> estudia el tema y resume lo importante.</li>
+          <li><strong>Día 1, 3 y 7:</strong> repásalo sin ver tus apuntes, tratando de recordarlo.</li>
+          <li>Usa <strong>tarjetas</strong> (por ejemplo con Anki) con una pregunta por tarjeta.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- MAPAS MENTALES -->
+    <section class="panel" id="mapas" role="tabpanel">
+      <div class="art blue">
+        <svg viewBox="0 0 360 200" role="img" aria-label="Mapa mental con un tema central y cuatro ramas">
+          <g stroke="#111" stroke-width="3" fill="none" stroke-linecap="round">
+            <path d="M180 100 L75 45"/><path d="M180 100 L285 45"/><path d="M180 100 L75 160"/><path d="M180 100 L285 160"/>
+            <path d="M75 45 L30 25" stroke-width="2"/><path d="M75 45 L28 62" stroke-width="2"/>
+            <path d="M285 160 L332 178" stroke-width="2"/><path d="M285 160 L334 142" stroke-width="2"/>
+          </g>
+          <g class="pulse"><circle cx="180" cy="100" r="34" fill="#f0634a" stroke="#111" stroke-width="4"/><text x="180" y="105" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Tema</text></g>
+          <g stroke="#111" stroke-width="3">
+            <rect x="35" y="30" width="80" height="30" rx="15" fill="#fff"/><rect x="245" y="30" width="80" height="30" rx="15" fill="#ffe9a8"/>
+            <rect x="35" y="145" width="80" height="30" rx="15" fill="#dcebc4"/><rect x="245" y="145" width="80" height="30" rx="15" fill="#fff"/>
+          </g>
+          <g font-size="12" font-weight="600" fill="#111" text-anchor="middle"><text x="75" y="50">Concepto</text><text x="285" y="50">Ejemplo</text><text x="75" y="165">Causa</text><text x="285" y="165">Dato clave</text></g>
+        </svg>
+      </div>
+      <div class="body">
+        <h2>Mapas mentales</h2>
+        <p class="lead" style="margin-bottom:0">Un dibujo del tema completo: la idea central al medio y las ramas con sus detalles.</p>
+        <ul>
+          <li>Escribe el <strong>tema</strong> en el centro de una hoja.</li>
+          <li>Sal con <strong>ramas</strong> para cada idea principal, con una palabra clave.</li>
+          <li>Usa <strong>colores y dibujos</strong> para recordar mejor, por ejemplo anatomía o procedimientos.</li>
+        </ul>
+      </div>
+    </section>
+
+    <h2 class="section-title">Video: cómo usar el método Pomodoro</h2>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/e1FWoX_oUgA" title="Cómo estudiar mejor con el método Pomodoro" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <p class="lead" style="margin-top:.8rem">¿No carga? <a href="https://www.youtube.com/watch?v=e1FWoX_oUgA" target="_blank" rel="noopener">Míralo directo en YouTube</a>.</p>
+
+    <h2 class="section-title">Antes de empezar a estudiar</h2>
+    <ol class="step-list">
+      <li><h3>Define una meta concreta</h3><p>"Entender el tema 3" es mejor que "estudiar un rato".</p></li>
+      <li><h3>Quita distracciones</h3><p>Celular en modo avión o en otro cuarto durante el bloque.</p></li>
+      <li><h3>Explícalo con tus palabras</h3><p>Si puedes explicarlo sin ver tus apuntes, ya lo entendiste.</p></li>
+    </ol>
+  </main>
+
+  <footer>
+    <div class="foot-brand">
+      <img src="img/uach-horizontal.svg" alt="Universidad Autónoma de Chihuahua" class="foot-logo">
+      <div><strong>Guía de Supervivencia Universitaria</strong><br>Proyecto colaborativo 11.1</div>
+    </div>
+    <div>Sitio: Natalia Muñoz Cavazos<br>Colaboró: Fernanda Ramírez</div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
